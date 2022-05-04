@@ -1,12 +1,12 @@
 from config import db
 
 class DbPerson(db.Model):
-    __tablename__='employee'
-    eno=db.Column(db.Integer,primary_key=True)
+    __tablename__='employees'
+    eno=db.Column(db.String(30),primary_key=True)
     name=db.Column(db.String(30),index=False,unique=False,nullable=False)
     city=db.Column(db.String(30),index=False,unique=False,nullable=False)
     designation=db.Column(db.String(30),index=False,unique=False,nullable=False)
-    age=db.Column(db.integer(30),index=False,unique=False,nullable=False)
+    age=db.Column(db.Integer,index=False,unique=False,nullable=False)
     
 
     def __init__(self,eno,name,city,designation,age):
