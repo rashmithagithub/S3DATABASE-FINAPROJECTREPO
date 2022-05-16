@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git([url: 'https://github.com/rashmithagithub/S3DATABASE-FINAPROJECTREPO', branch: 'master'])
+        git([url: 'https://github.com/rashmithagithub/jenkdocfinalproject', branch: 'master'])
 
       }
     }
