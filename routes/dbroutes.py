@@ -17,8 +17,8 @@ def processDepartments():
         name=input['name']
         city=input['city']
         designation=input['designation']
-        age=input['age']
-        db.session.add(DbPerson(eno,name,city,designation,age))
+        basic=input['basic']
+        db.session.add(DbPerson(eno,name,city,designation,basic))
         db.session.commit()
         return {"status": "success"}, 201
     except:
