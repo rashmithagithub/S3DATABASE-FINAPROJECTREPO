@@ -1,5 +1,6 @@
 from config import app,client
 from flask import request
+from producer import messageSender
 
 @app.route('/upload-file',methods=['POST'])
 def upload_image():
@@ -12,7 +13,8 @@ def upload_image():
           Key=filename,
           ContentType=content_type
     )
-
+    msg = f'{filename} sucessfully uploaded'
+    messageSender(msg)
     return {'message': 'file uploaded'}, 200
 
 @app.route("/download-file/<string:filename>",methods=["GET"])
